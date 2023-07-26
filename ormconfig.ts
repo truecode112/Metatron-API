@@ -1,0 +1,15 @@
+export const connectionSource = new DataSource({
+  migrationsTableName: 'migrations',
+  type: 'mysql',
+  host: 'localhost',
+  port: 3306,
+  username: 'root',
+  password: '',
+  database: 'metatron',
+  logging: false,
+  synchronize: false,
+  name: 'default',
+  entities: ['src/models/**/**.entity{.ts,.js}'],
+  migrations: ['src/db/migrations/**/*{.ts,.js}'],
+  subscribers: ['src/db/subscriber/**/*{.ts,.js}'],
+});

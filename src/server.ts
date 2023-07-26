@@ -18,6 +18,8 @@ cron.schedule('*/10 * * * *', () => {
   // })
 });
 
+const port = 3004;
+
 // Init express
 const app = express();
 // Init environment
@@ -60,8 +62,8 @@ app.all('*', (req, res, next) => {
 app.use(errorMiddleware);
 
 // starting the server
-// app.listen(port, () =>
-//     console.log(`🚀 Server running on port ${port}!`));
+ app.listen(port, () =>
+     console.log(`🚀 Server running on port ${port}!`));
 
 
 module.exports = app;
